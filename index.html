@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConectaBairro | Comunidade Participativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">🌱 Conecta<span>Bairro</span></div>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#participacao">Participação</a>
+        <a href="#solicitacoes">Solicitações</a>
+        <a href="#comunicados">Comunicados</a>
+    </nav>
+    <button class="login-btn" onclick="abrirLogin()">Entrar</button>
+</header>
+
+<section class="hero" id="inicio">
+    <div class="hero-content">
+        <span class="tag">SUA VOZ TRANSFORMA A COMUNIDADE</span>
+        <h1>Uma comunidade melhor começa com a sua participação!</h1>
+        <p>
+            Um espaço de diálogo entre moradores, empresas e indústrias.
+            Participe, compartilhe ideias e acompanhe as melhorias do seu bairro.
+        </p>
+        <a href="#participacao" class="primary-btn">Participar agora</a>
+    </div>
+    <div class="hero-icon">🏡</div>
+</section>
+
+<main class="container">
+
+    <section class="welcome">
+        <h2>Olá, comunidade! 👋</h2>
+        <p>Confira as oportunidades para participar e transformar nosso bairro.</p>
+    </section>
+
+    <section class="stats">
+        <div class="stat-card">
+            <span>💡</span>
+            <h3 id="totalSugestoes">128</h3>
+            <p>Sugestões recebidas</p>
+        </div>
+        <div class="stat-card">
+            <span>📋</span>
+            <h3 id="totalSolicitacoes">42</h3>
+            <p>Solicitações abertas</p>
+        </div>
+        <div class="stat-card">
+            <span>✅</span>
+            <h3>86</h3>
+            <p>Ações realizadas</p>
+        </div>
+        <div class="stat-card">
+            <span>👥</span>
+            <h3>540</h3>
+            <p>Moradores participantes</p>
+        </div>
+    </section>
+
+    <section id="participacao">
+        <h2 class="section-title">Como você quer participar?</h2>
+
+        <div class="features">
+            <div class="feature-card">
+                <span>💬</span>
+                <h3>Sugestões e reclamações</h3>
+                <p>Compartilhe ideias, problemas e melhorias para o bairro.</p>
+                <button onclick="abrirFormulario('sugestao')">Enviar mensagem</button>
+            </div>
+
+            <div class="feature-card">
+                <span>🗳️</span>
+                <h3>Votações e enquetes</h3>
+                <p>Ajude a comunidade a tomar decisões importantes.</p>
+                <button onclick="abrirEnquete()">Participar da votação</button>
+            </div>
+
+            <div class="feature-card">
+                <span>📍</span>
+                <h3>Minhas solicitações</h3>
+                <p>Acompanhe o andamento das solicitações enviadas.</p>
+                <a href="#solicitacoes">Acompanhar</a>
+            </div>
+
+            <div class="feature-card">
+                <span>⭐</span>
+                <h3>Avaliar ações</h3>
+                <p>Opine sobre as ações realizadas pelas indústrias.</p>
+                <button onclick="abrirAvaliacao()">Avaliar ações</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="solicitacoes" class="requests">
+        <h2 class="section-title">Acompanhamento de solicitações</h2>
+        <p>Veja exemplos de solicitações e seus respectivos status.</p>
+
+        <div class="request-item">
+            <div>
+                <strong>Melhoria na iluminação pública</strong>
+                <p>Protocolo: #00128</p>
+            </div>
+            <span class="status andamento">Em andamento</span>
+        </div>
+
+        <div class="request-item">
+            <div>
+                <strong>Limpeza de área verde</strong>
+                <p>Protocolo: #00127</p>
+            </div>
+            <span class="status concluido">Concluído</span>
+        </div>
+
+        <div class="request-item">
+            <div>
+                <strong>Melhoria na sinalização</strong>
+                <p>Protocolo: #00126</p>
+            </div>
+            <span class="status recebido">Recebido</span>
+        </div>
+    </section>
+
+    <section class="poll">
+        <h2>🗳️ Enquete da comunidade</h2>
+        <h3>Qual melhoria você considera mais importante para o bairro?</h3>
+        <div id="opcoesEnquete">
+            <button onclick="votar(this, 'Iluminação pública')">💡 Iluminação pública</button>
+            <button onclick="votar(this, 'Áreas de lazer')">🌳 Áreas de lazer</button>
+            <button onclick="votar(this, 'Segurança')">🛡️ Segurança</button>
+            <button onclick="votar(this, 'Limpeza urbana')">🧹 Limpeza urbana</button>
+        </div>
+        <p id="resultadoVoto"></p>
+    </section>
+
+    <section class="news" id="comunicados">
+        <h2 class="section-title">Comunicados e novidades</h2>
+
+        <div class="news-card">
+            <span>📢 COMUNICADO</span>
+            <h3>Programa de melhorias comunitárias</h3>
+            <p>As indústrias da região estão desenvolvendo novas ações para melhorar a qualidade de vida dos moradores.</p>
+        </div>
+
+        <div class="news-card">
+            <span>🌱 SUSTENTABILIDADE</span>
+            <h3>Projeto de preservação ambiental</h3>
+            <p>Confira as iniciativas ambientais e participe das próximas atividades.</p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="logo">🌱 Conecta<span>Bairro</span></div>
+    <p>Conectando pessoas, empresas e comunidades.</p>
+    <p>© 2026 ConectaBairro - Todos os direitos reservados.</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <button class="close" onclick="fecharModal()">✕</button>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
